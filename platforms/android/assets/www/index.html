@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- JS dependencies (order matters!) -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-sanitize.min.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <!--<link rel="stylesheet" href="lib/angular/angular-csp.css" />-->
+    <link rel="stylesheet" href="index.css" />
+    
+    
+
+    <title>InfoKom Austellungsapp</title>
+</head>
+
+<body ng-controller="AppController">
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    
+    <body ng-controller="AppController">
+    <ons-navigator var="navi">
+      <ons-page id="main.html">
+            
+            <div id="background" ng-init="F_login_getBackground()"></div>
+            <div id="background2" ng-init="F_login_getBackground2()" style="margin: auto; display: block;"></div>
+            
+            <ons-row>
+                <ons-col id="ID_clientWidth"><img src="img\whitespace.png" height="50px"></ons-col>
+            </ons-row>
+            
+            <ons-row>
+                <ons-col id="ID_referenzCol"></ons-col>
+                <ons-col id="lvrlogo" ng-init="F_login_getwidthLogo('lvrlogo');"></ons-col>
+                <ons-col></ons-col> 
+            </ons-row>
+            
+            <ons-row>
+                <ons-col><img src="img\whitespace.png" height="20px"></ons-col>
+            </ons-row>
+            
+            <ons-row>
+                <ons-col></ons-col>
+                <ons-col id="infologo" ng-init="F_login_getwidthLogo('infologo');"></ons-col>
+                <ons-col></ons-col>
+            </ons-row>
+            
+            <ons-row>
+                <ons-col><img src="img\whitespace.png" height="60px"></ons-col>
+            </ons-row>
+
+            <ons-row>
+                <ons-col></ons-col>
+                <ons-col>
+                    <input type="text" class="text-input" ng-model="text" placeholder="Code hier eingeben" style="margin: auto; display: block; width: 200px">
+                    
+                    <ons-button ng-click="F_login_checkCode()" style="width: 200px; text-align: center; margin: auto; display: block; margin-top: 15px">Bestätigen</ons-button>
+                </ons-col>
+                <ons-col></ons-col>
+            </ons-row>
+      </ons-page>
+    </ons-navigator>
+    
+    <ons-template id="menü.html">
+            <ons-toolbar>
+                <div class="left">
+                    <img src="img/infologo.png" height="40px" style="margin-left: 10px">    
+                </div>
+                <div class="right">
+                    <img src="img/lvrlogo.png" height="37px" style="margin-right: 10px; margin-top: 3px; ">
+                </div>
+            </ons-toolbar>
+            <div style="width: 96%; margin-top: 10px; margin-left: 2%; margin-right: 2%; margin-bottom: 10px">
+                <ons-row style="height: 100%">
+                    <ons-col >
+                        <ons-button modifier="light" height="{{menu_buttonheight}}" style="width: 47%; margin-right: 2%">test</ons-button>
+                    </ons-col>
+                    <ons-col >
+                        
+                    </ons-col>        
+                </ons-row>
+            </div>
+      </ons-template>
+    
+  </body>
+    
+    
+</body>
+</html>
